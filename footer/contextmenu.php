@@ -71,15 +71,15 @@
 <div id="contextmenu" class="contextmenu">
 <ul>
 <li>Site Developed by<br>Mohammed Zahid Wadiwale</li>
-<li><a class ="contextm1" href="about">About US</a></li>
-<li><a class ="contextm1" href="contact">Contact Us</a></li>
+<li><a class ="contextm1" href="../about">About US</a></li>
+<li><a class ="contextm1" href="../contact">Contact Us</a></li>
 <li><a class ="contextm1" href="">Contact Site Developer</a></li>
 <li class="sepratorcontextmenu"></li>
 <li><a class ="contextm1" onclick="location.reload();">Reload Page</a></li>
 <li onclick="window.open('//twitter.com/intent/tweet?text=' + window.location.href);">Share Page on Twitter</li>
 <li onclick="window.open('//facebook.com/sharer/sharer.php?u=' + window.location.href);">Share on Facebook</li>
 <li onclick="window.location='mailto:?body='+window.location.href;">Email This Page</li>
-<li onclick-="oncopycontext();">For Copy Use CTRL+C</li>
+<li>For Copy Use CTRL+C</li>
 </ul>
 </div>
 <script language="javascript">
@@ -91,8 +91,8 @@ var contextmenu=document.getElementById('contextmenu');
 var contextdisp=window.innerHeight;
 function showcontextmenu(event) {
 	contextmenu.style.display="block";
-	contextmenu.style.left=event.pageX+'px';
-	contextmenu.style.top=event.pageY+'px';
+	contextmenu.style.left=event.clientX+'px';
+	contextmenu.style.top=event.clientY+'px';
 	return false;
 }
 function hidecontextmenu(){
@@ -104,9 +104,5 @@ function listenkeyscontext(event){
 	{
 		hidecontextmenu();
 	}
-}
-function oncopycontext(){
-	var selObj = window.getSelection().toString();
-	var v=selobj;
 }
 </script>
